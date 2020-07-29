@@ -1,7 +1,7 @@
 # 1D phase measurement
 
 ## About
-Open source code to measure 1D positions with a periodic one dimensionnal pattern in Matlab.
+Open source code to measure 1D positions with a periodic single dimensionnal pattern in Matlab.
 
 The code presents four main functions to evaluate the period of a one dimensionnal pattern and the phase at the center of the pattern.
 
@@ -52,7 +52,7 @@ The user is also able to display feddback figures by adding the parameter `'on'`
 
 Copyright (c) 2018-2020 UBFC, ENSMM, UFC, CNRS.
 
-Authors: Antoine N. ANDRE, Guillaume J. LAURENT, Patrick SANDOZ
+Authors: Antoine N. ANDRE, Guillaume J. LAURENT, Patrick SANDOZ, Valérian GUELPA
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
