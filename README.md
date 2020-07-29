@@ -44,13 +44,14 @@ This method is based on a quadratic interpolation as described in the second art
 ```
 
 #### Figures display
-The user is also able to display feddback figures by addind the parameter `'on'` at the end of the function inputs to better understand the method of phase measurement.
+The user is also able to display feddback figures by adding the parameter `'on'` at the end of the function inputs to better understand the method of phase measurement.
 
 ![figureImg](figureExample.png)
 
 ## License terms
 
 Copyright (c) 2018-2020 UBFC, ENSMM, UFC, CNRS.
+
 Authors: Antoine N. ANDRE, Guillaume J. LAURENT, Patrick SANDOZ
 
 This program is free software: you can redistribute it and/or modify
