@@ -13,19 +13,19 @@ These open source functions relies on the published articles listed below:
 
 ## Features
 
-### Phase measurement with linear regression
+###### Phase measurement with linear regression
 This method is based on the fitting with a regression line of the unwrapped phase coming from the inverse Fourier transform, as described in the first cited article [1].
 
-### Phase measurement
+###### Phase measurement
 This method is based on the retrieving of the main frequency peak specific to the one dimensionnel periodic pattern. The phase is directly computed on the Fourier transform spectrum.
 
-### Phase measurement with zero padding
+###### Phase measurement with zero padding
 This method is based on the same method as the one described above, except that the input pattern is zero padded to the right and to the left.
 
-### Phase measurement with peak interpolation
+###### Phase measurement with peak interpolation
 This method is based on a quadratic interpolation as described in the second article [2].
 
-### Figures display
+###### Figures display
 The user is also able to display feddback figures to better understand the method of phase measurement.
 
 ![figureImg](figureExample.png)
