@@ -63,3 +63,7 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
+In addition, we kindly ask you to acknowledge this phase measurement method and its authors in any program or publication in which you use it. (You are not required to do so; it is up to your common sense to decide whether you want to comply with this request or not.) For general publications, we suggest referencing: Andre, A. N., Sandoz, P., Mauze, B., Jacquot, M., & Laurent, G. J. (2020). Sensing one nanometer over ten centimeters: A micro-encoded target for visual in-plane position measurement. IEEE/ASME Trans. Mechatronics.
+
+Non-free versions of this phase measurement method are available under terms different from those of the General Public License. For these alternatives terms you must purchase a license from FEMTO-ST Insititute (UBFC licensing office). Users interested in buying a license can contact the authors alternatively at antoine.andre@femto-st.fr or guillaume.laurent@femto-st.fr or patrick.sandoz@femto-st.fr
