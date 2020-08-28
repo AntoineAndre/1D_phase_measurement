@@ -1,19 +1,19 @@
 # 1D phase measurement
 
 ## About
-Open source code to measure 1D positions with a periodic single dimensionnal pattern in Matlab.
+Open source code to measure the phase and the period of 1D row signal/image with a periodic pattern in Matlab.
 
-The code presents four main functions to evaluate the period of a one dimensionnal pattern and the phase at the center of the pattern.
+The library contains four functions to evaluate the period of a one dimensionnal pattern and the phase at the center of the vector with different algorithms.
 
 ## Reference articles
-These open source functions relies on the published articles listed below:
+These functions rely on the published articles listed below:
 > [1] Andre, A. N., Sandoz, P., Mauze, B., Jacquot, M., & Laurent, G. J. (2020). Sensing one nanometer over ten centimeters: A micro-encoded target for visual in-plane position measurement. IEEE/ASME Trans. Mechatronics. https://doi.org/10.1109/TMECH.2020.2965211
 
 > [2] Guelpa, V., Laurent, G. J., Sandoz, P., Zea, J. G., & Clévy, C. (2014). Subpixelic measurement of large 1D displacements: Principle, processing algorithms, performances and software. Sensors, 14(3), 5056-5073. https://doi.org/10.3390/s140305056
 
 ## Features
 
-All of the four listed functions returns the same parameters that are the phase and the period in pixels of the pattern given in input.
+All of the listed functions returns the same values which are the phase and the period in pixels of the pattern given in input.
 
 #### Phase measurement with linear regression
 This method is based on the fitting with a regression line of the unwrapped phase coming from the inverse Fourier transform, as described in the first cited article [1].
@@ -64,6 +64,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-In addition, we kindly ask you to acknowledge this phase measurement method and its authors in any program or publication in which you use it. (You are not required to do so; it is up to your common sense to decide whether you want to comply with this request or not.) For general publications, we suggest referencing: Andre, A. N., Sandoz, P., Mauze, B., Jacquot, M., & Laurent, G. J. (2020). Sensing one nanometer over ten centimeters: A micro-encoded target for visual in-plane position measurement. IEEE/ASME Trans. Mechatronics.
+In addition, we kindly ask you to acknowledge this library and its authors in any program or publication in which you use it. (You are not required to do so; it is up to your common sense to decide whether you want to comply with this request or not.) For general publications, we suggest referencing: Andre, A. N., Sandoz, P., Mauze, B., Jacquot, M., & Laurent, G. J. (2020). Sensing one nanometer over ten centimeters: A micro-encoded target for visual in-plane position measurement. IEEE/ASME Trans. Mechatronics.
 
-Non-free versions of this phase measurement method are available under terms different from those of the General Public License. For these alternatives terms you must purchase a license from FEMTO-ST Insititute (UBFC licensing office). Users interested in buying a license can contact the authors alternatively at antoine.andre@femto-st.fr or guillaume.laurent@femto-st.fr or patrick.sandoz@femto-st.fr
+Non-free and 2D versions of these phase measurement methods are available under terms different from those of the General Public License. For these alternatives terms you must purchase a license from FEMTO-ST Institute (UBFC licensing office). Users interested in buying a license can contact the authors alternatively at antoine.andre@femto-st.fr or guillaume.laurent@femto-st.fr or patrick.sandoz@femto-st.fr

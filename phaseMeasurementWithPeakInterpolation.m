@@ -1,5 +1,5 @@
 function [phase, periodInPixels] = phaseMeasurementWithPeakInterpolation(patternRow, approximatePeriodInPixels, displayFigures)
-% Computes the position and the phase of a 1D pattern as described in: 
+% Computes the phase and the period of a 1D pattern as described in: 
 %   
 %   Guelpa, V., Laurent, G. J., Sandoz, P., Zea, J. G., & Clévy, C. (2014). 
 %   Subpixelic measurement of large 1D displacements: Principle, processing 

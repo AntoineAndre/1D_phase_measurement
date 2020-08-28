@@ -1,5 +1,5 @@
 function [phase, periodInPixels] = phaseMeasurement(patternRow, approximatePeriodInPixels, displayFigures)
-% Computes the phase of a 1D pattern directly from the angle of the peak
+% Computes the phase and the period of a 1D pattern directly from the angle of the peak
 %
 %   Usage
 %      phase = phaseMeasurement(patternRow, approximatePeriodInPixels)

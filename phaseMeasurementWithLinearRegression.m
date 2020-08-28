@@ -1,5 +1,5 @@
 function [phase, periodInPixels] = phaseMeasurementWithLinearRegression(patternRow, approximatePeriodInPixels, displayFigures)
-% Computes the position and the phase of a 1D pattern as described in: 
+% Computes the phase and the period of a 1D pattern as described in: 
 %   
 %   Andre, A. N., Sandoz, P., Mauze, B., Jacquot, M., & Laurent, G. J. (2020). 
 %   Sensing one nanometer over ten centimeters: A micro-encoded target for visual 
