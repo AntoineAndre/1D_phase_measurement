@@ -32,7 +32,7 @@ function [phase, periodInPixels] = phaseMeasurementWithPeakInterpolation(pattern
     [~, maxPos] = max(spectrum(offsetMin:offsetMax));
     maxPos = maxPos + offsetMin - 1;
     
-    refinedPos = quadraticPeakInterpolation(abs(spectrum),maxPos)
+    refinedPos = quadraticPeakInterpolation(abs(spectrum),maxPos);
     
     periodInPixels = ncols/refinedPos;
     

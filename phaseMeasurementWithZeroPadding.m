@@ -19,15 +19,17 @@ function [phase, periodInPixels] = phaseMeasurementWithZeroPadding(patternRow, a
 %         (in radian)
 %      periodInPixels: measured value of the wavelength (in pixels)
 %
-
-    ncols = size(patternRow,2);
     
+    ncols = size(patternRow,2);
+    ext = (n-ncols)/2;
+    extendedPatternRow = [zeros(1,ext) hann(ncols)'.*(patternRow - mean(patternRow)) zeros(1,ext)];
+   
     %Fourier transform without the continuous component
-    spectrum = fft(hann(size(patternRow,2))'.*(patternRow - mean(patternRow)),n);
+    spectrum = fft(extendedPatternRow);
         
     %Search for the position of the frequency peak
-    offsetMin = fix(n/approximatePeriodInPixels)-2;
-    offsetMax = fix(n/approximatePeriodInPixels)+2;
+    offsetMin = fix(n/approximatePeriodInPixels)-10;
+    offsetMax = fix(n/approximatePeriodInPixels)+10;
     [~, maxPos] = max(spectrum(offsetMin:offsetMax));
     maxPos = maxPos + offsetMin - 1;
 
@@ -35,7 +37,7 @@ function [phase, periodInPixels] = phaseMeasurementWithZeroPadding(patternRow, a
     periodInPixels = n/maxPos;
     
     %Get the phase correspondign to the peak
-    phase = mod(angle(spectrum(maxPos))-2*pi*ncols/2/periodInPixels-pi,2*pi);
+    phase = mod(angle(spectrum(maxPos))-2*pi*n/2/periodInPixels,2*pi)-pi;
     
     if nargin>3
         figure(1);
