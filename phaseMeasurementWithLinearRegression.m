@@ -23,32 +23,35 @@ function [phase, periodInPixels] = phaseMeasurementWithLinearRegression(patternR
 
     %Fourier transform without the continuous component
     spectrum = fftshift(fft(patternRow - mean(patternRow)));
+    
+    length_tot = size(spectrum,2);
+    length_window = size(spectrum,2)/2;
 
     %Search for the position of the frequency peak
-    offsetMin = fix(size(spectrum,2)/(approximatePeriodInPixels+2));
-    offsetMax = fix(size(spectrum,2)/(approximatePeriodInPixels-2));
-    [maxVal, maxPos] = max(spectrum(size(spectrum,2)/2+offsetMin:size(spectrum,2)/2+offsetMax));
+    offsetMin = fix(length_tot/(approximatePeriodInPixels+2));
+    offsetMax = fix(length_tot/(approximatePeriodInPixels-2));
+    [maxVal, maxPos] = max(spectrum(length_tot/2+offsetMin:length_tot/2+offsetMax));
 
     col = 1:size(spectrum,2);
-    col = (col - maxPos - offsetMin - size(spectrum,2)/2 + 1)/size(spectrum,2);
-    sigmaPercent = 0.01;
+    col = (col - maxPos - offsetMin - length_tot/2 + 1)/length_tot;
+    sigmaPercent = 0.002;
 
-    hyperGaussianFilter = exp(-power(col/(sqrt(2)*sigmaPercent), 2));
+    hyperGaussianFilter = exp(-power(col/sigmaPercent, 2));
 
     %Filter the inverse Fourier transform angle with the hyperGaussian
     %filter
     wrappedPhase = double(angle(ifft(fftshift(spectrum.*hyperGaussianFilter))));
 
     %unwrap from the center point
-    unwrappedPhase = wrappedPhase;
-    unwrappedPhase(size(wrappedPhase,2)/2:size(wrappedPhase,2)) = unwrap(wrappedPhase(size(wrappedPhase,2)/2:size(wrappedPhase,2)));
-    unwrappedPhase(size(wrappedPhase,2)/2:-1:1) = unwrap(wrappedPhase(size(wrappedPhase,2)/2:-1:1));
+    unwrappedPhase = wrappedPhase(length_window/2 + 1:3*length_window/2);
+    unwrappedPhase(length_window/2:length_window) = unwrap(unwrappedPhase(length_window/2:length_window));
+    unwrappedPhase(length_window/2:-1:1) = unwrap(unwrappedPhase(length_window/2:-1:1));
 
-    x = -size(spectrum,2)/2+0.5:size(spectrum,2)/2-0.5;
+    x = -length_window/2+0.5:length_window/2-0.5;
 
     %Least squares method to fit the unwrapped phase
-    m = (size(spectrum,2)*sum(x.*unwrappedPhase) - sum(x)*sum(unwrappedPhase))/(size(spectrum,2)*sum(x.*x) - sum(x)^2);
-    phase = (sum(unwrappedPhase) - m*sum(x))/size(spectrum,2);
+    m = (length_window*sum(x.*unwrappedPhase) - sum(x)*sum(unwrappedPhase))/(length_window*sum(x.*x) - sum(x)^2);
+    phase = (sum(unwrappedPhase) - m*sum(x))/length_window;
     
     %Period of the pattern is directly given by the slope of the regression
     %line

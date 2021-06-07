@@ -37,7 +37,7 @@ function [phase, periodInPixels] = phaseMeasurementWithZeroPadding(patternRow, a
     periodInPixels = n/maxPos;
     
     %Get the phase correspondign to the peak
-    phase = mod(angle(spectrum(maxPos))-2*pi*n/2/periodInPixels,2*pi)-pi;
+    phase = mod(angle(spectrum(maxPos))-2*pi*(n+1)/2/periodInPixels,2*pi)-pi;
     
     if nargin>3
         figure(1);

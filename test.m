@@ -3,7 +3,7 @@
 
 % Parameters definition
 ncols = 1024;
-periodInPixels = 32.2345;
+periodInPixels = 35.2345;
 phase =  0.45
 
 % Creation of a single dimensionnal periodic pattern
@@ -11,7 +11,7 @@ patternRow = periodicPattern(ncols, periodInPixels, phase);
 
 
 % Phase measurement methods, comment / uncomment the one needed
-[phase, periodInPixels] = phaseMeasurementWithLinearRegression(patternRow, fix(periodInPixels), 'on')
-% [phase, periodInPixels] = phaseMeasurement(patternRow, fix(periodInPixels), 'on')
-% [phase, periodInPixels] = phaseMeasurementWithZeroPadding(patternRow, fix(periodInPixels), 4096, 'on')
-% [phase, periodInPixels] = phaseMeasurementWithPeakInterpolation(patternRow, fix(periodInPixels), 'on')
+[phase_reg, periodInPixels_reg] = phaseMeasurementWithLinearRegression(patternRow, fix(periodInPixels), 'on')
+% [phase_peak, periodInPixels_peak] = phaseMeasurement(patternRow, fix(periodInPixels), 'on')
+% [phase_zeros, periodInPixels_zeros] = phaseMeasurementWithZeroPadding(patternRow, fix(periodInPixels), 4096, 'on')
+% [phase_interp, periodInPixels_interp] = phaseMeasurementWithPeakInterpolation(patternRow, fix(periodInPixels), 'on')
