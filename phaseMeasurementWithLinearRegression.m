@@ -33,8 +33,8 @@ function [phase, periodInPixels] = phaseMeasurementWithLinearRegression(patternR
     [maxVal, maxPos] = max(spectrum(length_tot/2+offsetMin:length_tot/2+offsetMax));
 
     col = 1:size(spectrum,2);
-    col = (col - maxPos - offsetMin - length_tot/2 + 1)/length_tot;
-    sigmaPercent = 0.002;
+    col = (col - maxPos - offsetMin - length_tot/2 + 0.5)/length_tot;
+    sigmaPercent = 0.008;
 
     hyperGaussianFilter = exp(-power(col/sigmaPercent, 2));
 

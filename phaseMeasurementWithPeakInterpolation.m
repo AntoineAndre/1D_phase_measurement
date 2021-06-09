@@ -39,7 +39,7 @@ function [phase, periodInPixels] = phaseMeasurementWithPeakInterpolation(pattern
     patternRowCos = 2*(periodicPattern(ncols, periodInPixels, 0.0)-0.5);
     patternRowSin = 2*(periodicPattern(ncols, periodInPixels, pi/2)-0.5);
     window = gaussianWindow(ncols);
-    
+
     %Get the phase correspondign to the peak
     phase = atan2(sum(patternRow.*patternRowSin.*window),sum(patternRow.*patternRowCos.*window));
     
