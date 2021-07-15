@@ -34,7 +34,7 @@ function [phase, periodInPixels] = phaseMeasurementWithPeakInterpolation(pattern
     
     refinedPos = quadraticPeakInterpolation(abs(spectrum),maxPos);
     
-    periodInPixels = ncols/refinedPos;
+    periodInPixels = ncols/(refinedPos-1);
     
     patternRowCos = 2*(periodicPattern(ncols, periodInPixels, 0.0)-0.5);
     patternRowSin = 2*(periodicPattern(ncols, periodInPixels, pi/2)-0.5);

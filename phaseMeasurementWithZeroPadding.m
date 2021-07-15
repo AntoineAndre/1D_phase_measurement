@@ -28,13 +28,13 @@ function [phase, periodInPixels] = phaseMeasurementWithZeroPadding(patternRow, a
     spectrum = fft(extendedPatternRow);
         
     %Search for the position of the frequency peak
-    offsetMin = fix(n/approximatePeriodInPixels)-10;
-    offsetMax = fix(n/approximatePeriodInPixels)+10;
+    offsetMin = floor(n/approximatePeriodInPixels)-2*(n/ncols);
+    offsetMax = ceil(n/approximatePeriodInPixels)+2*(n/ncols);
     [~, maxPos] = max(spectrum(offsetMin:offsetMax));
     maxPos = maxPos + offsetMin - 1;
 
     %Get the period in pixel
-    periodInPixels = n/maxPos;
+    periodInPixels = n/(maxPos-1);
     
     %Get the phase correspondign to the peak
     phase = mod(angle(spectrum(maxPos))-2*pi*(n+1)/2/periodInPixels,2*pi)-pi;
